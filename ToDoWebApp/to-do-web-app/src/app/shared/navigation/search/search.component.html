@@ -1,0 +1,16 @@
+<div class="margin"*ngIf="router.url=='/dashboard'">
+
+         <form [formGroup]="searchForm" (ngSubmit)="onSubmit()">
+             <div style="width: 25%;">
+            <input
+              type="text"
+              id="title"
+              class="form-control"
+              formControlName="title"
+            />
+        </div>
+        <div  class="position">
+                <button class="btn btn-success" type="submit">Search</button>
+            </div>
+         </form>
+</div>

@@ -1,0 +1,22 @@
+<div *ngIf="listItem != null" class="preview">
+  <div *ngIf="listItem.remind" class="remind">Reminder</div>
+  <div class="d-flex align-items-end justify-content-end">
+    <div>
+      <button class="btn btn-primary" (click)="edit(listItem.id)">Edit</button>
+      <button class="btn btn-primary" (click)="delete(listItem.id)">
+        Delete
+      </button>
+      <button class="btn btn-primary" (click)="share(listItem)">
+        Share
+      </button>
+    </div>
+  </div>
+
+  <h3>ID : {{ listItem.id }}</h3>
+  <p>Title : {{ listItem.title }}</p>
+
+  List item Descriptions
+  <div *ngFor="let item of listItem.listItems">
+    {{ item.description }}
+  </div>
+</div>

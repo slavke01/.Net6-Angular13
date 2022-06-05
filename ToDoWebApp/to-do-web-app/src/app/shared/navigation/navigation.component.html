@@ -1,0 +1,24 @@
+<div>
+  <nav class="navbar navbar-expand-lg navbar navbar-dark bg-primary">
+    <a class="navbar-brand" routerLink="/dashboard">Dashboard</a>
+
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-item nav-link active" routerLink="/to-do-list"
+          >Add ToDoList</a
+        >
+      </div>
+    </div>
+    <div>
+      <span>{{ name }}</span>
+    </div>
+    <button
+      *ngIf="auth.isAuthenticated$ | async;"
+      class="btn btn-danger btn-block"
+      (click)="logout()"
+    >
+      Log out
+    </button>
+  </nav>
+  <app-search></app-search>
+</div>

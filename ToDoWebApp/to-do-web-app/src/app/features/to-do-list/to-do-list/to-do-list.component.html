@@ -1,0 +1,72 @@
+<div>
+  <form [formGroup]="toDoListForm" (ngSubmit)="onSubmit()">
+    <div class="row">
+      <div class="col-sm-5 form-group">
+        <label for="title">Title</label>
+        <input
+          type="text"
+          id="title"
+          class="form-control"
+          formControlName="title"
+        />
+      </div>
+    </div>
+    <br />
+    <div class="row">
+      <div class="col-xs-12">
+        <button class="btn btn-success" type="submit">Submit</button>
+      </div>
+    </div>
+  </form>
+
+  <div class="reminder">
+    <form [formGroup]="reminderForm" (ngSubmit)="onRemindSubmit()">
+      <div class="row">
+        <div class="col-sm-5 form-group">
+          <label for="remindDate">Remind after</label>
+          <input
+            type="date"
+            id="remindDate"
+          
+            class="form-control"
+            formControlName="remindDate"
+          />
+          <div
+          *ngIf="valid()
+          " class="alert alert-danger"
+        >
+          Select a valid date
+        </div>
+      
+        <div class="col-xs-12">
+          <button class="btn btn-success" type="submit">Submit reminder</button>
+        </div>
+      </div>
+      </div>
+    </form>
+  </div>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody cdkDropList (cdkDropListDropped)="drop($event)">
+        <tr *ngFor="let item of todoList.listItems" cdkDrag>
+          <td>{{ item.id }}</td>
+          <td>{{ item.name }}</td>
+          <td>{{ item.description }}</td>
+          <td><button class="btn" (click)="editItem(item.id)">Edit</button></td>
+        </tr>
+      
+    </tbody>
+  </table>
+
+  <div>
+    <h4>Add new list item</h4>
+    <app-to-do-list-item (itemEmitter)="getData($event)"></app-to-do-list-item>
+  </div>
+</div>

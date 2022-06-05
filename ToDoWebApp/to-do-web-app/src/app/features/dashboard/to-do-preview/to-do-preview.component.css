@@ -1,0 +1,13 @@
+.preview {
+    width:  250px;
+    border-style: solid;
+    border-color: gray;
+    border-width: 5px;
+    background-color: lightgray;
+    margin-right: 5px;
+}
+.remind{
+    border-style: solid;
+    border-color:green;
+    border-width: 3px;
+}

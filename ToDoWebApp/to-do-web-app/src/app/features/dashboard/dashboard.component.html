@@ -1,0 +1,10 @@
+<div>
+  <div
+    cdkDropList
+    (cdkDropListDropped)="drop($event)"
+  >
+    <div *ngFor="let item of response" >
+      <app-to-do-preview cdkDrag [listItem]="item"></app-to-do-preview>
+    </div>
+  </div>
+</div>

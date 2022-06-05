@@ -1,0 +1,39 @@
+<div>
+    <form [formGroup]="toDoListItemForm" (ngSubmit)="onSubmit()">
+        <div class="row">
+          <div class="col-sm-5 form-group">
+            <label for="name">Name</label>
+            <input
+              type="text"
+              id="name"
+              class="form-control"
+              formControlName="name">
+          </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-5 form-group">
+              <label for="description">Description</label>
+              <input
+                type="text"
+                id="description"
+                class="form-control"
+                formControlName="description">
+            </div>
+          </div>
+        <div>
+
+        </div>
+        <br/>
+
+
+        
+         <br/>
+        <div class="row">
+          <div class="col-xs-12">
+            <button
+              class="btn btn-success"
+              type="submit">Submit</button>
+          </div>
+        </div>
+      </form>
+</div>
